@@ -21,7 +21,7 @@ ratings = pd.read_csv("ratings_small.csv")
 
 @app.get('/')
 def home():
-    return "Welcome!"
+    return "Welcome! Add "/docs" in the url and input these values in the Post method: userId=1, movieId=302, rating=3"
 
 # @app.get("/{name}")
 # def get_name(name: str):
@@ -42,4 +42,5 @@ def predict_rating(data:RecommendationSystem):
 
 
 if __name__=="__main__":
-    uvicorn.run(app, host='127.0.0.1', port=8000)
+    port = int(os.environ.get("PORT",8000))
+    uvicorn.run(app, host='127.0.0.1', port=port)
