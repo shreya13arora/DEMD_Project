@@ -21,7 +21,7 @@ ratings = pd.read_csv("ratings_small.csv")
 
 @app.get('/')
 def home():
-    return "Welcome! Add "/docs" in the url and input these values in the Post method: userId=1, movieId=302, rating=3"
+    return "Welcome! Open Swagger UI and input these values in the Post method: userId=1, movieId=302, rating=3"
 
 # @app.get("/{name}")
 # def get_name(name: str):
