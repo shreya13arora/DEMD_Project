@@ -37,7 +37,7 @@ def predict_rating(data:RecommendationSystem):
     rating = data['rating']
     print(model.predict(userId,movieId,rating))
     result = model.predict(userId,movieId,rating)
-    return (result)
+    return (f"The predicted rating is {result}")
     # print(result)
 
 
