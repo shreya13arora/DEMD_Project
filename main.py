@@ -21,7 +21,7 @@ ratings = pd.read_csv("ratings_small.csv")
 
 @app.get('/')
 def home():
-    return "Welcome! Open Swagger UI and input these values in the Post method: userId=1, movieId=302, rating=3"
+    return "Welcome! Add /docs in the url and input these values in the Post method: userId=1, movieId=302, rating=3"
 
 # @app.get("/{name}")
 # def get_name(name: str):
@@ -36,7 +36,7 @@ def predict_rating(data:RecommendationSystem):
     movieId = data['movieId']
     rating = data['rating']
     print(model.predict(userId,movieId,rating))
-    result = model.predict(userId,movieId,rating)
+    result = model.predict(userId,movieId,rating)[3]
     return (f"The predicted rating is {result}")
     # print(result)
 
